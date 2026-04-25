@@ -1,0 +1,22 @@
+---
+type Props = {
+  id?: string;
+  title: string;
+  commandPrefix?: "$" | ">";
+  class?: string;
+};
+
+const { id, title, commandPrefix = "$", class: className = "" } = Astro.props;
+---
+
+<section id={id} class={`px-6 py-20 md:py-32 ${className}`} data-reveal>
+  <div class="mx-auto max-w-5xl reveal">
+    <h2 class="text-3xl font-mono font-semibold text-text-primary md:text-4xl">
+      <span class="mr-2 text-cyan">{commandPrefix}</span>{title}
+    </h2>
+    <div class="mt-10">
+      <slot />
+    </div>
+  </div>
+</section>
+

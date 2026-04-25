@@ -1,0 +1,77 @@
+---
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import "../styles/global.css";
+
+type Props = {
+  title?: string;
+  description?: string;
+};
+
+const {
+  title = "Joshua Kunz | Senior DevOps Engineer",
+  description = "DevOps portfolio focused on reliable infrastructure, GitOps workflows, and observability-driven systems."
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content="Joshua Kunz Portfolio" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>{title}</title>
+  </head>
+  <body id="top" class="font-sans text-text-primary">
+    <Header />
+    <main class="pt-16">
+      <slot />
+    </main>
+    <Footer />
+
+    <script>
+      const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      if (!reduced) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.12 }
+        );
+
+        document.querySelectorAll("[data-reveal] .reveal").forEach((el) => observer.observe(el));
+      } else {
+        document.querySelectorAll("[data-reveal] .reveal").forEach((el) => el.classList.add("is-visible"));
+      }
+    </script>
+  </body>
+</html>

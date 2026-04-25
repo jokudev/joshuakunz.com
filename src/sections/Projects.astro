@@ -1,0 +1,17 @@
+---
+import Section from "../components/Section.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import { profile } from "../data/profile";
+---
+
+<Section id="projects" title="git log --featured">
+  <div class="grid grid-cols-1 gap-6 md:grid-cols-12">
+    {
+      profile.projects.map((project) => (
+        <div class="md:col-span-6">
+          <ProjectCard project={project} />
+        </div>
+      ))
+    }
+  </div>
+</Section>

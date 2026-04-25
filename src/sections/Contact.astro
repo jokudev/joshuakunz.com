@@ -1,0 +1,47 @@
+---
+import { Github, Linkedin, Twitter } from "lucide-astro";
+import Section from "../components/Section.astro";
+import { profile } from "../data/profile";
+---
+
+<Section id="contact" title="ping -c 1 engineer">
+  <div class="text-center">
+    <a
+      href={`mailto:${profile.email}`}
+      class="text-2xl font-mono text-cyan transition-colors hover:text-amber focus:outline-none focus:ring-2 focus:ring-cyan md:text-4xl"
+    >
+      {profile.email}
+    </a>
+
+    <div class="mt-8 flex items-center justify-center gap-6">
+      <a
+        href={profile.github}
+        target="_blank"
+        rel="noreferrer"
+        class="text-text-secondary transition-colors hover:text-cyan focus:outline-none focus:ring-2 focus:ring-cyan"
+        aria-label="GitHub profile"
+      >
+        <Github class="h-6 w-6" />
+      </a>
+      <a
+        href={profile.linkedin}
+        target="_blank"
+        rel="noreferrer"
+        class="text-text-secondary transition-colors hover:text-cyan focus:outline-none focus:ring-2 focus:ring-cyan"
+        aria-label="LinkedIn profile"
+      >
+        <Linkedin class="h-6 w-6" />
+      </a>
+      <a
+        href={profile.twitter}
+        target="_blank"
+        rel="noreferrer"
+        class="text-text-secondary transition-colors hover:text-cyan focus:outline-none focus:ring-2 focus:ring-cyan"
+        aria-label="X profile"
+      >
+        <Twitter class="h-6 w-6" />
+      </a>
+    </div>
+  </div>
+</Section>
+

@@ -1,0 +1,17 @@
+---
+import Section from "../components/Section.astro";
+import SkillCard from "../components/SkillCard.astro";
+import { profile } from "../data/profile";
+---
+
+<Section id="toolkit" title="ls -la skills/">
+  <div class="grid grid-cols-1 gap-5 md:grid-cols-12">
+    {
+      profile.skills.map((skill) => (
+        <div class="md:col-span-6 xl:col-span-4">
+          <SkillCard skill={skill} />
+        </div>
+      ))
+    }
+  </div>
+</Section>

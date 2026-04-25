@@ -1,0 +1,70 @@
+---
+import { ArrowUpRight, Github } from "lucide-astro";
+import type { Project } from "../data/profile";
+
+type Props = {
+  project: Project;
+};
+
+const { project } = Astro.props;
+---
+
+<article
+  class="rounded-lg border border-border bg-surface p-5 transition duration-300 hover:border-cyan/30 hover:bg-surface-hover hover:shadow-[0_0_20px_rgba(34,211,238,0.15)]"
+>
+  <img
+    src="/project-placeholder.svg"
+    alt={project.imageAlt}
+    class="aspect-video w-full rounded-lg border border-border object-cover"
+    loading="lazy"
+    decoding="async"
+  />
+
+  <div class="mt-4">
+    <div class="flex items-center justify-between gap-4">
+      <h3 class="text-xl font-semibold text-text-primary">{project.title}</h3>
+      {project.demo && (
+        <a
+          href={project.demo}
+          target="_blank"
+          rel="noreferrer"
+          class="text-cyan transition-colors hover:text-amber focus:outline-none focus:ring-2 focus:ring-cyan"
+          aria-label={`Open live demo for ${project.title}`}
+        >
+          <ArrowUpRight class="h-5 w-5" />
+        </a>
+      )}
+    </div>
+
+    <p class="mt-3 text-base leading-relaxed text-text-secondary">{project.description}</p>
+
+    <div class="mt-4 flex flex-wrap gap-2">
+      {
+        project.tags.map((tag) => (
+          <span class="pill">{tag}</span>
+        ))
+      }
+    </div>
+
+    <div class="mt-5 flex items-center gap-5 text-sm font-mono">
+      <a
+        href={project.github}
+        target="_blank"
+        rel="noreferrer"
+        class="inline-flex items-center gap-2 text-cyan transition-colors hover:text-amber focus:outline-none focus:ring-2 focus:ring-cyan"
+      >
+        <Github class="h-4 w-4" /> Repo
+      </a>
+      {project.demo && (
+        <a
+          href={project.demo}
+          target="_blank"
+          rel="noreferrer"
+          class="inline-flex items-center gap-2 text-cyan transition-colors hover:text-amber focus:outline-none focus:ring-2 focus:ring-cyan"
+        >
+          <ArrowUpRight class="h-4 w-4" /> Live Demo
+        </a>
+      )}
+    </div>
+  </div>
+</article>

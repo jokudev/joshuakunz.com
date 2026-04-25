@@ -1,0 +1,80 @@
+---
+const navLinks = [
+  { href: "#about", label: "about" },
+  { href: "#toolkit", label: "toolkit" },
+  { href: "#experience", label: "experience" },
+  { href: "#projects", label: "projects" },
+  { href: "#contact", label: "contact" }
+];
+---
+
+<header class="fixed inset-x-0 top-0 z-50 border-b border-border bg-void/80 backdrop-blur-md">
+  <div class="mx-auto flex h-16 w-full max-w-5xl items-center justify-between px-6">
+    <a
+      href="#top"
+      class="text-sm font-mono text-cyan transition-colors hover:text-amber focus:outline-none focus:ring-2 focus:ring-cyan"
+      >~/.portfolio</a
+    >
+
+    <nav aria-label="Primary navigation" class="hidden items-center gap-6 md:flex">
+      {
+        navLinks.map((link) => (
+          <a href={link.href} class="nav-link">
+            {link.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <button
+      id="menu-toggle"
+      class="inline-flex items-center rounded-md border border-border p-2 text-text-primary transition hover:border-cyan/60 hover:text-cyan focus:outline-none focus:ring-2 focus:ring-cyan md:hidden"
+      aria-label="Toggle menu"
+      aria-controls="mobile-menu"
+      aria-expanded="false"
+      type="button"
+    >
+      <span class="flex flex-col gap-1.5" aria-hidden="true">
+        <span class="block h-0.5 w-5 bg-current"></span>
+        <span class="block h-0.5 w-5 bg-current"></span>
+        <span class="block h-0.5 w-5 bg-current"></span>
+      </span>
+      <span class="sr-only">Menu</span>
+    </button>
+  </div>
+
+  <nav
+    id="mobile-menu"
+    aria-label="Mobile navigation"
+    class="hidden min-h-[calc(100vh-4rem)] border-t border-border bg-surface px-6 py-8 md:hidden"
+  >
+    <div class="mx-auto flex max-w-5xl flex-col gap-5">
+      {
+        navLinks.map((link) => (
+          <a href={link.href} class="nav-link text-lg">
+            {link.label}
+          </a>
+        ))
+      }
+    </div>
+  </nav>
+</header>
+
+<script>
+  const button = document.getElementById("menu-toggle");
+  const menu = document.getElementById("mobile-menu");
+  const links = menu?.querySelectorAll("a");
+
+  button?.addEventListener("click", () => {
+    const expanded = button.getAttribute("aria-expanded") === "true";
+    button.setAttribute("aria-expanded", String(!expanded));
+    menu?.classList.toggle("hidden");
+  });
+
+  links?.forEach((link) => {
+    link.addEventListener("click", () => {
+      button?.setAttribute("aria-expanded", "false");
+      menu?.classList.add("hidden");
+    });
+  });
+</script>
