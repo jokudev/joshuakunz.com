@@ -1,4 +1,5 @@
 ---
+import TypingText from "../components/TypingText.astro";
 import { profile } from "../data/profile";
 ---
 
@@ -8,7 +9,7 @@ import { profile } from "../data/profile";
       <p class="font-mono text-sm text-cyan">{profile.role}</p>
       <h1 class="mt-4 text-5xl font-mono font-bold tracking-tight text-text-primary md:text-7xl">{profile.name}</h1>
       <p class="mt-6 max-w-3xl text-lg leading-relaxed text-text-secondary">
-        {profile.subtitle}<span class="ml-1 inline-block animate-pulse font-mono text-cyan">|</span>
+        <TypingText text={profile.subtitle} speed={50} backSpeed={25} loop={false} />
       </p>
 
       <div class="mt-10 flex flex-wrap gap-4">
@@ -26,11 +27,7 @@ import { profile } from "../data/profile";
         </a>
       </div>
 
-      <pre class="mt-12 overflow-x-auto rounded-lg border border-border bg-surface p-4 text-xs text-text-secondary md:text-sm">
-> Joshua Kunz — {profile.location}
-> Fachrichtung: Applikationsentwicklung
-> Fokus: Linux, Cloud, DevOps, Homelab
-      </pre>
+      <pre class="mt-12 overflow-x-auto rounded-lg border border-border bg-surface p-4 text-xs text-text-secondary md:text-sm"><TypingText text={`> Joshua Kunz — ${profile.location}\n> Fachrichtung: Applikationsentwicklung\n> Fokus: Linux, Cloud, DevOps, Homelab`} speed={40} backSpeed={20} loop={false} /></pre>
     </div>
   </div>
 </section>

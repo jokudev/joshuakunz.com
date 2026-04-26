@@ -1,0 +1,91 @@
+---
+interface Props {
+  text: string;
+  speed?: number;
+  backSpeed?: number;
+  loop?: boolean;
+  class?: string;
+}
+
+const {
+  text = "Hello from Astro!",
+  speed = 80,
+  backSpeed = 40,
+  loop = false,
+  class: className = "",
+} = Astro.props;
+---
+
+<span class={`typing-text ${className}`} data-text={text} data-speed={speed} data-back-speed={backSpeed} data-loop={loop}>
+  <span class="typing-content"></span>
+  <span class="cursor">_</span>
+</span>
+
+<script>
+  document.querySelectorAll(".typing-text").forEach((el) => {
+    const text = (el as HTMLElement).dataset.text || "";
+    const speed = Number((el as HTMLElement).dataset.speed || 80);
+    const backSpeed = Number((el as HTMLElement).dataset.backSpeed || 40);
+    const shouldLoop = (el as HTMLElement).dataset.loop === "true";
+    const content = el.querySelector(".typing-content") as HTMLElement;
+
+    let i = 0;
+    let deleting = false;
+
+    function tick() {
+      if (!content) return;
+
+      if (!deleting) {
+        content.textContent = text.slice(0, i + 1);
+        i++;
+
+        if (i === text.length) {
+          if (!shouldLoop) {
+            return;
+          }
+          setTimeout(() => {
+            deleting = true;
+            tick();
+          }, 1500);
+          return;
+        }
+      } else {
+        content.textContent = text.slice(0, i - 1);
+        i--;
+
+        if (i === 0) {
+          deleting = false;
+        }
+      }
+
+      setTimeout(tick, deleting ? backSpeed : speed);
+    }
+
+    tick();
+  });
+</script>
+
+<style>
+  .typing-text {
+    display: inline;
+    font-family: inherit;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  .cursor {
+    display: inline-block;
+    margin-left: 2px;
+    animation: blink 0.8s step-end infinite;
+    opacity: 1;
+  }
+
+  @keyframes blink {
+    0%, 49% {
+      opacity: 1;
+    }
+    50%, 100% {
+      opacity: 0;
+    }
+  }
+</style>
