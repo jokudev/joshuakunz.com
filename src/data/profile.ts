@@ -45,7 +45,7 @@ export const profile = {
     "Begeistert für Linux, Infrastruktur und Cloud-Technologien. Baue produktionsnahe Lösungen in meinem Homelab.",
   about: [
     "Ich bin Joshua Kunz, 2007 in Basel geboren und lebe in Basel. Seit meiner Kindheit faszinieren mich Computer und Technologie, was mich zur Ausbildung als Informatiker EFZ bewog.",
-    "Beruflich arbeite ich als Applikationsentwickler und liebe das Problemlösen und die kreative Seite der Softwareentwicklung. Im ersten Lehrjahr wurde ich von einem erfahrenen Kollegen in Linux, Infrastruktur und Automation eingeführt. Seitdem baue ich intensiv an meinem eigenen Homelab. Mein Homelab ist mehr als nur ein Hobby – es ist mein Spielplatz für praktisches, exploratives Lernen."
+    "Beruflich arbeite ich als Applikationsentwickler und liebe das Problemlösen und die kreative Seite der Softwareentwicklung. Im ersten Lehrjahr wurde ich von einem erfahrenen Kollegen in die Welt von Linux, Infrastruktur und Automation eingeführt. Seitdem baue ich in der Freizeit intensiv an meinem eigenen Homelab. Mein Homelab ist mehr als nur ein Hobby – es ist mein Spielplatz für praktisches, exploratives Lernen."
   ],
   languages: [
     { name: "Deutsch", level: "Muttersprache" },
