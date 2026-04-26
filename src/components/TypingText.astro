@@ -4,6 +4,7 @@ interface Props {
   speed?: number;
   backSpeed?: number;
   loop?: boolean;
+  pause?: number;
   class?: string;
 }
 
@@ -12,17 +13,19 @@ const {
   speed = 80,
   backSpeed = 40,
   loop = false,
+  pause = 1500,
   class: className = "",
 } = Astro.props;
 ---
 
-<span class={`typing-text ${className}`} data-text={text} data-speed={speed} data-back-speed={backSpeed} data-loop={loop}><span class="typing-content"></span><span class="cursor">_</span></span>
+<span class={`typing-text ${className}`} data-text={text} data-speed={speed} data-back-speed={backSpeed} data-pause={pause} data-loop={loop}><span class="typing-content"></span><span class="cursor">_</span></span>
 
 <script>
   document.querySelectorAll(".typing-text").forEach((el) => {
     const text = (el as HTMLElement).dataset.text || "";
     const speed = Number((el as HTMLElement).dataset.speed || 80);
     const backSpeed = Number((el as HTMLElement).dataset.backSpeed || 40);
+    const pause = Number((el as HTMLElement).dataset.pause || 1500);
     const shouldLoop = (el as HTMLElement).dataset.loop === "true";
     const content = el.querySelector(".typing-content") as HTMLElement;
 
@@ -43,7 +46,7 @@ const {
           setTimeout(() => {
             deleting = true;
             tick();
-          }, 1500);
+          }, pause);
           return;
         }
       } else {
