@@ -1,38 +1,22 @@
 ---
-import { Cloud, Code2, Container, LineChart, Workflow } from "lucide-astro";
-import type { SkillCategory } from "../data/profile";
-
 type Props = {
-  skill: SkillCategory;
+  category: string;
+  items: string[];
 };
 
-const { skill } = Astro.props;
-
-const iconMap = {
-  cloud: Cloud,
-  container: Container,
-  workflow: Workflow,
-  "line-chart": LineChart,
-  code: Code2
-};
-
-const Icon = iconMap[skill.icon];
+const { category, items } = Astro.props;
 ---
 
 <article
   class="rounded-lg border border-border bg-surface p-6 transition duration-300 hover:border-cyan/30 hover:bg-surface-hover hover:shadow-[0_0_20px_rgba(34,211,238,0.15)]"
 >
-  <div class="mb-4 flex items-center gap-3">
-    <Icon class="h-5 w-5 text-cyan" aria-hidden="true" />
-    <h3 class="text-xl font-semibold text-text-primary">{skill.category}</h3>
-  </div>
+  <h3 class="mb-4 text-xl font-semibold text-text-primary">{category}</h3>
 
   <div class="flex flex-wrap gap-2">
     {
-      skill.items.map((item) => (
+      items.map((item: string) => (
         <span class="pill">{item}</span>
       ))
     }
   </div>
 </article>
-

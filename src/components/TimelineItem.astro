@@ -1,35 +1,23 @@
 ---
-import type { ExperienceItem } from "../data/profile";
-
 type Props = {
-  item: ExperienceItem;
+  item: any;
 };
 
 const { item } = Astro.props;
-
-const range = `${item.start} — ${item.end}`;
 ---
 
 <article class="relative grid gap-6 md:grid-cols-[1fr_20px_1fr] md:gap-8">
-  <time class="pl-6 text-sm font-mono text-text-secondary md:pl-0 md:text-right">{range}</time>
+  <time class="pl-6 text-sm font-mono text-text-secondary md:pl-0 md:text-right">{item.period}</time>
 
   <div class="relative">
     <span class="absolute left-[0.15rem] top-1 block h-2 w-2 rounded-full bg-cyan md:left-1/2 md:-translate-x-1/2"></span>
   </div>
 
   <div class="rounded-lg border border-border bg-surface p-6 transition duration-300 hover:border-cyan/30 hover:bg-surface-hover hover:shadow-[0_0_20px_rgba(34,211,238,0.15)]">
-    <h3 class="text-xl font-semibold text-text-primary">{item.role}</h3>
-    <p class="mt-1 text-sm font-mono text-text-secondary">{item.company}</p>
-
-    <ul class="mt-4 space-y-3 text-base leading-relaxed text-text-secondary">
-      {
-        item.bullets.map((bullet) => (
-          <li class="flex gap-3">
-            <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan" aria-hidden="true"></span>
-            <span>{bullet}</span>
-          </li>
-        ))
-      }
-    </ul>
+    <h3 class="text-xl font-semibold text-text-primary">{item.title}</h3>
+    <p class="mt-1 text-sm font-mono text-text-secondary">{item.institution}</p>
+    {item.location && (
+      <p class="text-xs text-text-secondary">{item.location}</p>
+    )}
   </div>
 </article>

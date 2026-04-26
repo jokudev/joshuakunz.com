@@ -1,0 +1,30 @@
+---
+import Section from "../components/Section.astro";
+import { profile } from "../data/profile";
+---
+
+<Section id="wettkaempfe" title="cat wettkaempfe.txt">
+  <div class="space-y-4">
+    <p class="text-sm text-text-secondary">{profile.competitionMeta}</p>
+    <div class="space-y-3">
+      {
+        profile.competitions.map((comp) => (
+          <div class={`rounded-lg border p-4 ${comp.highlight ? "border-cyan bg-cyan/5" : "border-border"}`}>
+            <div class="flex items-start justify-between">
+              <div>
+                <p class="font-mono text-sm text-text-secondary">{comp.year}</p>
+                <p class="mt-1 font-mono text-text-primary">{comp.event}</p>
+              </div>
+              <p class="font-mono text-sm text-cyan">{comp.result}</p>
+            </div>
+            {comp.link && (
+              <a href={comp.link} target="_blank" rel="noreferrer" class="mt-2 text-xs text-cyan hover:underline">
+                Ergebnisse →
+              </a>
+            )}
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</Section>

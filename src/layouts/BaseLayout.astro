@@ -9,20 +9,21 @@ type Props = {
 };
 
 const {
-  title = "Joshua Kunz | Senior DevOps Engineer",
-  description = "DevOps portfolio focused on reliable infrastructure, GitOps workflows, and observability-driven systems."
+  title = "Joshua Kunz | DevOps Portfolio",
+  description = "Portfolio von Joshua Kunz mit Fokus auf Linux, Infrastruktur, Cloud-Technologien und Homelab-Projekte."
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site).toString();
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="de">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
+    <meta name="author" content="Joshua Kunz" />
     <link rel="canonical" href={canonical} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 

@@ -13,20 +13,38 @@ import { profile } from "../data/profile";
       }
 
       <a
-        href={profile.resumeUrl}
+        href={profile.cvUrl}
         class="inline-flex rounded-full border border-cyan px-5 py-2.5 font-mono text-sm text-cyan transition hover:bg-cyan/10 focus:outline-none focus:ring-2 focus:ring-cyan"
       >
-        Download Resume
+        Lebenslauf PDF
       </a>
     </div>
 
     <aside class="mx-auto w-full max-w-xs">
-      <div class="rounded-lg bg-gradient-to-br from-cyan/40 via-transparent to-amber/30 p-[1px]">
-        <div class="flex aspect-square items-center justify-center rounded-lg border border-border bg-surface">
-          <span class="font-mono text-sm text-text-secondary">avatar.placeholder</span>
+      <div class="space-y-4">
+        <div>
+          <h3 class="mb-2 text-xs font-mono uppercase tracking-widest text-text-secondary">Sprachen</h3>
+          <div class="space-y-1">
+            {
+              profile.languages.map((lang) => (
+                <p class="text-sm text-text-secondary">{lang.name} — {lang.level}</p>
+              ))
+            }
+          </div>
+        </div>
+        <div>
+          <h3 class="mb-2 text-xs font-mono uppercase tracking-widest text-text-secondary">Interessen</h3>
+          <div class="flex flex-wrap gap-2">
+            {
+              profile.interests.map((interest) => (
+                <span class="rounded-full border border-border bg-surface px-3 py-1 text-xs text-text-secondary">
+                  {interest}
+                </span>
+              ))
+            }
+          </div>
         </div>
       </div>
     </aside>
   </div>
 </Section>
-

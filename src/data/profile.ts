@@ -1,138 +1,138 @@
-export type SkillCategory = {
+export type StackCategory = {
   category: string;
-  icon: "cloud" | "container" | "workflow" | "line-chart" | "code";
   items: string[];
 };
 
-export type ExperienceItem = {
-  company: string;
-  role: string;
-  start: string;
-  end: string;
-  bullets: string[];
+export type EducationItem = {
+  period: string;
+  title: string;
+  institution: string;
+  location: string;
 };
 
-export type Project = {
+export type CompetitionItem = {
+  year: string;
+  event: string;
+  result: string;
+  highlight: boolean;
+  link?: string;
+};
+
+export type ProjectItem = {
   title: string;
   description: string;
+  bullets: string[];
   tags: string[];
-  github: string;
+  repo?: string;
   demo?: string;
-  imageAlt: string;
 };
 
 export const profile = {
   name: "Joshua Kunz",
-  role: "Senior DevOps Engineer",
-  subtitle: "Building resilient systems, automated pipelines, and observable infrastructure.",
-  email: "hello@example.com",
-  github: "https://github.com/jokudev",
-  linkedin: "https://linkedin.com/in/joshua-kunz",
-  twitter: "https://x.com/joshua_kunz",
-  resumeUrl: "/resume.pdf",
+  role: "Angehender Informatiker EFZ // Applikationsentwicklung",
+  location: "Basel, Schweiz",
+  birth: "2007, Basel",
+  email: "contact@joshuakunz.com",
+  github: "https://github.com/joshuakunz",
+  cvUrl: "/cv.pdf",
+  subtitle:
+    "Begeistert für Linux, Infrastruktur und Cloud-Technologien. Baue produktionsnahe Lösungen in meinem Homelab.",
   about: [
-    "I design and operate infrastructure with reliability as a feature, not a patch. My approach combines infrastructure as code, immutable delivery, and clear operational playbooks so teams can move quickly without sacrificing safety.",
-    "I focus on GitOps-driven workflows, progressive delivery, and robust CI/CD foundations that scale with product and team growth. I enjoy turning fragile build-and-release paths into predictable, observable systems.",
-    "Across cloud-native environments, I treat observability as a first-class architecture concern. Metrics, traces, and logs should provide fast feedback loops for both developers and operators."
+    "Ich bin Joshua Kunz, 2007 in Basel geboren und lebe in Basel. Seit meiner Kindheit faszinieren mich Computer und Technologie, was mich zur Ausbildung als Informatiker EFZ bewog.",
+    "Beruflich arbeite ich als Applikationsentwickler und liebe das Problemlösen und die kreative Seite der Softwareentwicklung. Im ersten Lehrjahr wurde ich von einem erfahrenen Kollegen in Linux, Infrastruktur und Automation eingeführt. Seitdem baue ich intensiv an meinem eigenen Homelab. Mein Homelab ist mehr als nur ein Hobby – es ist mein Spielplatz für praktisches, exploratives Lernen."
   ],
-  skills: [
+  languages: [
+    { name: "Deutsch", level: "Muttersprache" },
+    { name: "Englisch", level: "C1" }
+  ],
+  interests: ["Musik", "Kochen", "Gaming", "Lesen", "Technologie", "Reisen"],
+  stack: [
     {
       category: "Cloud & Infra",
-      icon: "cloud",
-      items: ["AWS", "Azure", "GCP", "Terraform", "Pulumi"]
+      items: ["AWS", "Docker", "Kubernetes", "Terraform", "Ansible"]
     },
     {
-      category: "Orchestration",
-      icon: "container",
-      items: ["Kubernetes", "Docker", "Helm", "ArgoCD"]
+      category: "CI/CD & Git",
+      items: ["Git", "GitLab CI"]
     },
     {
-      category: "CI/CD",
-      icon: "workflow",
-      items: ["GitHub Actions", "GitLab CI", "Jenkins", "Flux"]
+      category: "Systeme & Tools",
+      items: ["Linux"]
     },
     {
-      category: "Observability",
-      icon: "line-chart",
-      items: ["Prometheus", "Grafana", "Datadog", "ELK"]
-    },
-    {
-      category: "Languages",
-      icon: "code",
-      items: ["Go", "Python", "Rust", "TypeScript", "Bash"]
+      category: "Sprachen",
+      items: ["Java"]
     }
-  ] as SkillCategory[],
-  experience: [
+  ] as StackCategory[],
+  education: [
     {
-      company: "Northstar Cloud Systems",
-      role: "Senior DevOps Engineer",
-      start: "2022-01",
-      end: "Present",
-      bullets: [
-        "Led a multi-cluster Kubernetes migration, improving deployment reliability and reducing failed releases by 35%.",
-        "Designed a reusable Terraform module framework across 6 products, cutting infrastructure provisioning time by 45%.",
-        "Implemented SLO-driven observability with Prometheus and Grafana, reducing incident mean time to resolution by 38%."
-      ]
+      period: "2022 – 2026",
+      title: "Lehrling Applikationsentwicklung",
+      institution: "Swiss Aviation Software Ltd.",
+      location: "Basel"
     },
     {
-      company: "ScaleForge Labs",
-      role: "Platform Engineer",
-      start: "2019-04",
-      end: "2021-12",
-      bullets: [
-        "Rebuilt CI pipelines in GitHub Actions with parallelized jobs, reducing average build time by 50%.",
-        "Introduced GitOps delivery with ArgoCD and policy checks, decreasing manual production changes by 90%.",
-        "Automated cost visibility dashboards and rightsizing workflows, lowering monthly cloud spend by 22%."
-      ]
+      period: "2022 – 2026",
+      title: "Technische Berufsmaturität",
+      institution: "Berufsbildungszentrum Baselland",
+      location: ""
     },
     {
-      company: "Bytecraft Technologies",
-      role: "DevOps Engineer",
-      start: "2016-07",
-      end: "2019-03",
-      bullets: [
-        "Containerized monolithic workloads and introduced Helm-based release templates across environments.",
-        "Built centralized logging on ELK and alert routing, improving incident detection coverage from 60% to 95%.",
-        "Developed internal release tooling in Go and Bash, reducing deployment handoff time by 40%."
-      ]
+      period: "2019 – 2022",
+      title: "Sekundarschule Niveau E",
+      institution: "Sekundarschule Sissach",
+      location: ""
     }
-  ] as ExperienceItem[],
+  ] as EducationItem[],
+  competitionMeta: "SwissSkills — Skill 53: Cloud Computing",
+  competitions: [
+    {
+      year: "2025",
+      event: "Regionalmeisterschaften",
+      result: "1. Platz",
+      highlight: true,
+      link: "https://www.swiss-skills.ch/"
+    },
+    {
+      year: "2025",
+      event: "Nationalmeisterschaften",
+      result: "4. Platz",
+      highlight: false,
+      link: "https://www.swiss-skills.ch/"
+    },
+    {
+      year: "2026",
+      event: "Regionalmeisterschaften",
+      result: "8. Platz",
+      highlight: false
+    },
+    {
+      year: "2027",
+      event: "Nationalmeisterschaften",
+      result: "qualifiziert",
+      highlight: false
+    }
+  ] as CompetitionItem[],
   projects: [
     {
-      title: "K8s GitOps Platform",
-      description:
-        "A multi-environment delivery platform using ArgoCD, policy checks, and Helm overlays for safe, repeatable releases.",
-      tags: ["Kubernetes", "ArgoCD", "Helm", "OPA"],
-      github: "https://github.com/jokudev/k8s-gitops-platform",
-      demo: "https://example.com/gitops-platform",
-      imageAlt: "Dashboard-style preview of a Kubernetes GitOps deployment platform."
+      title: "Linux-basierte Infrastruktur & Homelab",
+      description: "Pseudo-produktive Infrastruktur zu Hause mit Docker, Kubernetes und IaC.",
+      bullets: [
+        "Aufbau und Betrieb einer pseudo-produktiven Infrastruktur mit Docker, Kubernetes und mehreren selbst gehosteten Diensten",
+        "Infrastruktur-as-Code mit Terraform und Ansible für automatisierte Deployments",
+        "Netzwerk-Segmentierung, TLS/PKI, Reverse Proxies und Least-Privilege-Zugriffe",
+        "Monitoring & Alerting für Stabilität und Performance"
+      ],
+      tags: ["Linux", "Docker", "Kubernetes", "Terraform", "Ansible"],
+      repo: "https://github.com/joshuakunz"
     },
     {
-      title: "Serverless Cost Optimizer",
+      title: "Berufliche Applikationsentwicklung",
       description:
-        "An automated analysis pipeline that identifies runtime, memory, and concurrency optimization opportunities for serverless workloads.",
-      tags: ["AWS Lambda", "Python", "FinOps", "CloudWatch"],
-      github: "https://github.com/jokudev/serverless-cost-optimizer",
-      demo: "https://example.com/serverless-optimizer",
-      imageAlt: "Cost optimization report interface for serverless infrastructure."
-    },
-    {
-      title: "Custom Terraform Provider",
-      description:
-        "A Terraform provider in Go for internal platform APIs, enabling declarative resource lifecycle management in IaC workflows.",
-      tags: ["Terraform", "Go", "IaC", "Provider SDK"],
-      github: "https://github.com/jokudev/custom-terraform-provider",
-      imageAlt: "Terminal-like view of Terraform plan output for custom resources."
-    },
-    {
-      title: "Observability Starter Kit",
-      description:
-        "A production-ready monitoring stack with Prometheus, Grafana, and alerting templates for Kubernetes and VM workloads.",
-      tags: ["Prometheus", "Grafana", "Alertmanager", "Kubernetes"],
-      github: "https://github.com/jokudev/observability-starter-kit",
-      demo: "https://example.com/observability-kit",
-      imageAlt: "Graphs and service health widgets in an observability dashboard."
+        "Praxisnahe Java- und Backend-Aufgaben im Rahmen der Lehre bei Swiss Aviation Software Ltd.",
+      bullets: ["Mitarbeit an produktionsnahen Applikationsmodulen und strukturierten Entwicklungsprozessen."],
+      tags: ["Java", "Applikationsentwicklung"],
+      demo: "https://www.swiss-as.com/"
     }
-  ] as Project[]
+  ] as ProjectItem[]
 };
-

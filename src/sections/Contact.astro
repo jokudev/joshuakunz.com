@@ -1,10 +1,10 @@
 ---
-import { Github, Linkedin, Twitter } from "lucide-astro";
+import { Github } from "lucide-astro";
 import Section from "../components/Section.astro";
 import { profile } from "../data/profile";
 ---
 
-<Section id="contact" title="ping -c 1 engineer">
+<Section id="kontakt" title="cat kontakt.txt">
   <div class="text-center">
     <a
       href={`mailto:${profile.email}`}
@@ -19,29 +19,10 @@ import { profile } from "../data/profile";
         target="_blank"
         rel="noreferrer"
         class="text-text-secondary transition-colors hover:text-cyan focus:outline-none focus:ring-2 focus:ring-cyan"
-        aria-label="GitHub profile"
+        aria-label="GitHub Profil"
       >
         <Github class="h-6 w-6" />
-      </a>
-      <a
-        href={profile.linkedin}
-        target="_blank"
-        rel="noreferrer"
-        class="text-text-secondary transition-colors hover:text-cyan focus:outline-none focus:ring-2 focus:ring-cyan"
-        aria-label="LinkedIn profile"
-      >
-        <Linkedin class="h-6 w-6" />
-      </a>
-      <a
-        href={profile.twitter}
-        target="_blank"
-        rel="noreferrer"
-        class="text-text-secondary transition-colors hover:text-cyan focus:outline-none focus:ring-2 focus:ring-cyan"
-        aria-label="X profile"
-      >
-        <Twitter class="h-6 w-6" />
       </a>
     </div>
   </div>
 </Section>
-
