@@ -1,11 +1,12 @@
 ---
+import { profile } from "../data/profile";
+
 const year = new Date().getFullYear();
 ---
 
 <footer class="border-t border-border bg-void/80 px-6 py-8">
   <div class="mx-auto flex w-full max-w-5xl flex-col justify-between gap-3 text-sm text-text-secondary md:flex-row md:items-center">
-    <p class="font-mono">© {year} Joshua Kunz</p>
-    <p class="font-mono">Built with Astro · Deployed via GitHub Actions</p>
+    <p class="font-mono">© {year} {profile.name}</p>
+    <p class="font-mono">Built with Astro · Deployed via <a href={profile.githubRepo} target="_blank" rel="noreferrer"class="hover:underline">GitHub Actions & Pages</a></p>
   </div>
 </footer>
-

@@ -5,7 +5,7 @@ import { profile } from "../data/profile";
 
 <Section id="wettkaempfe" title="kubectl get achievements">
   <div class="space-y-4">
-    <p class="text-sm text-text-secondary">{profile.competitionMeta}</p>
+      <a class="text-m text-text-secondary underline" href={profile.competitionMetaLink} target="_blank" rel="noreferrer">{profile.competitionMeta}</a>
     <div class="space-y-3">
       {
         profile.competitions.map((comp) => (

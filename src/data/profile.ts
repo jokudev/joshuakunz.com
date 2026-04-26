@@ -39,6 +39,7 @@ export const profile = {
   birth: "2007, Basel",
   email: "contact@joshuakunz.com",
   github: "https://github.com/jokudev",
+  githubRepo: "https://github.com/jokudev/joshuakunz.com",
   cvUrl: "/cv.pdf",
   subtitle:
     "Begeistert für Linux, Infrastruktur und Cloud-Technologien. Baue produktionsnahe Lösungen in meinem Homelab.",
@@ -61,7 +62,7 @@ export const profile = {
         },
         {
           category: "Datenbanken",
-          items: ["PostgreSQL"]
+          items: ["PostgreSQL", "HyperSQL"]
         },
         {
           category: "Tools & IDEs",
@@ -74,15 +75,15 @@ export const profile = {
       categories: [
         {
           category: "Cloud & Infra",
-          items: ["AWS", "Docker", "Kubernetes", "Terraform", "Ansible"]
+          items: ["AWS", "Docker", "Kubernetes", "Terraform"]
         },
         {
-          category: "CI/CD & Git",
-          items: ["Git", "GitLab CI"]
+          category: "CI/CD & Automation",
+          items: ["Git", "GitLab CI", "Ansible", "Semaphore"]
         },
         {
           category: "Systeme & Tools",
-          items: ["Linux"]
+          items: ["Linux", "Proxmox", "Talos"]
         }
       ]
     }
@@ -90,9 +91,9 @@ export const profile = {
   education: [
     {
       period: "2022 – 2026",
-      title: "Lehrling Applikationsentwicklung",
-      institution: "Swiss Aviation Software Ltd.",
-      location: "Basel"
+      title: "Lehre Informatiker EFZ – Applikationsentwicklung",
+      institution: "Swiss AviationSoftware Ltd.",
+      location: "Allschwil"
     },
     {
       period: "2022 – 2026",
@@ -108,6 +109,7 @@ export const profile = {
     }
   ] as EducationItem[],
   competitionMeta: "SwissSkills — Skill 53: Cloud Computing",
+  competitionMetaLink: "https://skill53.ch",
   competitions: [
     {
       year: "2025",
@@ -148,12 +150,12 @@ export const profile = {
         "Monitoring & Alerting für Stabilität und Performance"
       ],
       tags: ["Linux", "Docker", "Kubernetes", "Terraform", "Ansible"],
-      repo: "https://github.com/joshuakunz"
+      // repo: "https://github.com/joshuakunz"
     },
     {
       title: "Berufliche Applikationsentwicklung",
       description:
-        "Praxisnahe Java- und Backend-Aufgaben im Rahmen der Lehre bei Swiss Aviation Software Ltd.",
+        "Praxisnahe Java- und Backend-Aufgaben im Rahmen der Lehre bei Swiss AviationSoftware Ltd.",
       bullets: ["Mitarbeit an produktionsnahen Applikationsmodulen und strukturierten Entwicklungsprozessen."],
       tags: ["Java", "Applikationsentwicklung"],
       demo: "https://www.swiss-as.com/"
