@@ -16,10 +16,7 @@ const {
 } = Astro.props;
 ---
 
-<span class={`typing-text ${className}`} data-text={text} data-speed={speed} data-back-speed={backSpeed} data-loop={loop}>
-  <span class="typing-content"></span>
-  <span class="cursor">_</span>
-</span>
+<span class={`typing-text ${className}`} data-text={text} data-speed={speed} data-back-speed={backSpeed} data-loop={loop}><span class="typing-content"></span><span class="cursor">_</span></span>
 
 <script>
   document.querySelectorAll(".typing-text").forEach((el) => {
