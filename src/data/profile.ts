@@ -159,6 +159,28 @@ export const profile = {
       bullets: ["Mitarbeit an produktionsnahen Applikationsmodulen und strukturierten Entwicklungsprozessen."],
       tags: ["Java", "Applikationsentwicklung"],
       demo: "https://www.swiss-as.com/"
+    },
+    {
+      title: "joshuakunz.com",
+      description: "Persönliche Portfolio-Website mit Fokus auf Performance, Klarheit und sauberer Informationsarchitektur.",
+      bullets: [
+        "Design und Umsetzung einer schnellen, responsiven Portfolio-Website mit klarer Struktur",
+        "Präsentation von Ausbildung, Wettbewerbserfolgen und technischen Schwerpunkten in einer konsistenten UX"
+      ],
+      tags: ["Astro", "TypeScript", "Tailwind", "Portfolio"],
+      repo: "https://github.com/jokudev/joshuakunz.com",
+      demo: "https://joshuakunz.com"
+    },
+    {
+      title: "joku.dev — Interactive Terminal Portfolio",
+      description: "Terminal-native Portfolio als interaktive Shell-Session mit virtueller Filestruktur und Commands.",
+      bullets: [
+        "Abbildung der Portfolio-Inhalte als echte Command-Erfahrung mit ls/cat/cd/history",
+        "Keyboard-first Bedienung mit Command-History, Autocomplete und Terminal-typischem Look-and-feel"
+      ],
+      tags: ["Vite", "TypeScript", "Tailwind", "Terminal UX"],
+      repo: "https://github.com/jokudev/joku.dev",
+      demo: "https://joku.dev"
     }
   ] as ProjectItem[]
 };
