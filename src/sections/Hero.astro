@@ -9,7 +9,7 @@ import { profile } from "../data/profile";
       <p class="font-mono text-sm text-cyan">{profile.role}</p>
       <h1 class="mt-4 text-5xl font-mono font-bold tracking-tight text-text-primary md:text-7xl">{profile.name}</h1>
       <p class="mt-6 max-w-3xl text-lg leading-relaxed text-text-secondary">
-        <TypingText text={profile.subtitle} speed={50} backSpeed={25} loop={false} />
+        <TypingText text={profile.subtitle} speed={40} backSpeed={10} loop={false} pause={5000} />
       </p>
 
       <div class="mt-10 flex flex-wrap gap-4">

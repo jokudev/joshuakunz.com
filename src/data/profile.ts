@@ -3,6 +3,11 @@ export type StackCategory = {
   items: string[];
 };
 
+export type StackGroup = {
+  name: string;
+  categories: StackCategory[];
+};
+
 export type EducationItem = {
   period: string;
   title: string;
@@ -48,22 +53,40 @@ export const profile = {
   interests: ["Musik", "Kochen", "Gaming", "Lesen", "Technologie", "Reisen"],
   stack: [
     {
-      category: "Cloud & Infra",
-      items: ["AWS", "Docker", "Kubernetes", "Terraform", "Ansible"]
+      name: "Professional",
+      categories: [
+        {
+          category: "Sprachen",
+          items: ["Java"]
+        },
+        {
+          category: "Datenbanken",
+          items: ["PostgreSQL"]
+        },
+        {
+          category: "Tools & IDEs",
+          items: ["Maven", "GitLab", "SonarQube", "IntelliJ IDEA"]
+        }
+      ]
     },
     {
-      category: "CI/CD & Git",
-      items: ["Git", "GitLab CI"]
-    },
-    {
-      category: "Systeme & Tools",
-      items: ["Linux"]
-    },
-    {
-      category: "Sprachen",
-      items: ["Java"]
+      name: "Homelab",
+      categories: [
+        {
+          category: "Cloud & Infra",
+          items: ["AWS", "Docker", "Kubernetes", "Terraform", "Ansible"]
+        },
+        {
+          category: "CI/CD & Git",
+          items: ["Git", "GitLab CI"]
+        },
+        {
+          category: "Systeme & Tools",
+          items: ["Linux"]
+        }
+      ]
     }
-  ] as StackCategory[],
+  ] as StackGroup[],
   education: [
     {
       period: "2022 – 2026",
