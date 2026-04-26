@@ -40,7 +40,7 @@ export const profile = {
   email: "contact@joshuakunz.com",
   github: "https://github.com/jokudev",
   githubRepo: "https://github.com/jokudev/joshuakunz.com",
-  cvUrl: "/cv.pdf",
+  cvUrl: "/resume.pdf",
   subtitle:
     "Begeistert für Linux, Infrastruktur und Cloud-Technologien. Baue produktionsnahe Lösungen in meinem Homelab.",
   about: [
