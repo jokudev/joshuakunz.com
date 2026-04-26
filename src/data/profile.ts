@@ -33,7 +33,7 @@ export const profile = {
   location: "Basel, Schweiz",
   birth: "2007, Basel",
   email: "contact@joshuakunz.com",
-  github: "https://github.com/joshuakunz",
+  github: "https://github.com/jokudev",
   cvUrl: "/cv.pdf",
   subtitle:
     "Begeistert für Linux, Infrastruktur und Cloud-Technologien. Baue produktionsnahe Lösungen in meinem Homelab.",
@@ -90,21 +90,22 @@ export const profile = {
       year: "2025",
       event: "Regionalmeisterschaften",
       result: "1. Platz",
-      highlight: true,
-      link: "https://www.swiss-skills.ch/"
+      highlight: false,
+      link: "https://www.ict-berufsbildung.ch/resources/RM_Year2025_Ranking-ALL_ICT-BBCH5.pdf"
     },
     {
       year: "2025",
       event: "Nationalmeisterschaften",
       result: "4. Platz",
-      highlight: false,
-      link: "https://www.swiss-skills.ch/"
+      highlight: true,
+      link: "https://www.ict-berufsbildung.ch/resources/Resultate_SwissSkills_ICTskills2025.pdf"
     },
     {
       year: "2026",
       event: "Regionalmeisterschaften",
       result: "8. Platz",
-      highlight: false
+      highlight: false,
+      link: "https://www.ict-berufsbildung.ch/resources/Regionalmeisterschaft-2026-Rangliste.pdf"
     },
     {
       year: "2027",

@@ -18,7 +18,7 @@ const {
 } = Astro.props;
 ---
 
-<span class={`typing-text ${className}`} data-text={text} data-speed={speed} data-back-speed={backSpeed} data-pause={pause} data-loop={loop}><span class="typing-content"></span><span class="cursor">_</span></span>
+<span class={`typing-text ${className}`} data-text={text} data-speed={speed} data-back-speed={backSpeed} data-pause={pause} data-loop={loop ? 'true' : 'false'}><span class="typing-content"></span><span class="cursor">_</span></span>
 
 <script>
   document.querySelectorAll(".typing-text").forEach((el) => {
@@ -50,11 +50,17 @@ const {
           return;
         }
       } else {
-        content.textContent = text.slice(0, i - 1);
         i--;
+        content.textContent = text.slice(0, i);
 
         if (i === 0) {
           deleting = false;
+          if (shouldLoop) {
+            setTimeout(() => tick(), pause);
+            return;
+          } else {
+            return;
+          }
         }
       }
 
