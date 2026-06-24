@@ -19,5 +19,8 @@ const { item } = Astro.props;
     {item.location && (
       <p class="text-xs text-text-secondary">{item.location}</p>
     )}
+    {item.result && (
+      <p class="mt-3 inline-flex rounded-full border border-cyan/30 bg-cyan/10 px-3 py-1 text-xs font-mono text-cyan">{item.result}</p>
+    )}
   </div>
 </article>
