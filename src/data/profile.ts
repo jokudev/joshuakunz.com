@@ -13,6 +13,7 @@ export type EducationItem = {
   title: string;
   institution: string;
   location: string;
+  result?: string;
 };
 
 export type CompetitionItem = {
@@ -34,7 +35,7 @@ export type ProjectItem = {
 
 export const profile = {
   name: "Joshua Kunz",
-  role: "Angehender Informatiker EFZ // Applikationsentwicklung",
+  role: "Informatiker EFZ // Applikationsentwicklung",
   location: "Basel, Schweiz",
   birth: "2007, Basel",
   email: "contact@joshuakunz.com",
@@ -44,7 +45,7 @@ export const profile = {
   subtitle:
     "Begeistert für Linux, Infrastruktur und Cloud-Technologien. Baue produktionsnahe Lösungen in meinem Homelab.",
   about: [
-    "Ich bin Joshua Kunz, 2007 in Basel geboren und lebe in Basel. Seit meiner Kindheit faszinieren mich Computer und Technologie, was mich zur Ausbildung als Informatiker EFZ bewog.",
+    "Ich bin Joshua Kunz, 2007 in Basel geboren und lebe in Basel. Seit meiner Kindheit faszinieren mich Computer und Technologie, was mich zur Ausbildung als Informatiker EFZ bewog, die ich mit der Note 5.7 im Rang abgeschlossen habe.",
     "Beruflich arbeite ich als Applikationsentwickler und liebe das Problemlösen und die kreative Seite der Softwareentwicklung. Im ersten Lehrjahr wurde ich von einem erfahrenen Kollegen in die Welt von Linux, Infrastruktur und Automation eingeführt. Seitdem baue ich in der Freizeit intensiv an meinem eigenen Homelab. Mein Homelab ist mehr als nur ein Hobby – es ist mein Spielplatz für praktisches, exploratives Lernen."
   ],
   languages: [
@@ -91,15 +92,17 @@ export const profile = {
   education: [
     {
       period: "2022 – 2026",
-      title: "Lehre Informatiker EFZ – Applikationsentwicklung",
+      title: "Informatiker EFZ – Applikationsentwicklung",
       institution: "Swiss AviationSoftware Ltd.",
-      location: "Allschwil"
+      location: "Allschwil",
+      result: "Abgeschlossen im Rang · Note 5.7"
     },
     {
       period: "2022 – 2026",
       title: "Technische Berufsmaturität",
       institution: "Berufsbildungszentrum Baselland",
-      location: ""
+      location: "",
+      result: "Abgeschlossen · Note 4.9"
     },
     {
       period: "2019 – 2022",
