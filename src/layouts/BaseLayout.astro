@@ -14,6 +14,8 @@ const {
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+const umamiWebsiteId = import.meta.env.PUBLIC_UMAMI_WEBSITE_ID;
+const umamiScriptUrl = import.meta.env.PUBLIC_UMAMI_SCRIPT_URL ?? "https://cloud.umami.is/script.js";
 ---
 
 <!doctype html>
@@ -36,6 +38,16 @@ const canonical = new URL(Astro.url.pathname, Astro.site).toString();
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    {
+      umamiWebsiteId && (
+        <script
+          async
+          defer
+          src={umamiScriptUrl}
+          data-website-id={umamiWebsiteId}
+        ></script>
+      )
+    }
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

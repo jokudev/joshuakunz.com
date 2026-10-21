@@ -8,6 +8,7 @@ import { profile } from "../data/profile";
   <div class="text-center">
     <a
       href={`mailto:${profile.email}`}
+      data-umami-event="contact-email-click"
       class="text-2xl font-mono text-cyan transition-colors hover:text-amber focus:outline-none focus:ring-2 focus:ring-cyan md:text-4xl"
     >
       {profile.email}
@@ -18,6 +19,7 @@ import { profile } from "../data/profile";
         href={profile.github}
         target="_blank"
         rel="noreferrer"
+        data-umami-event="social-github-click"
         class="text-text-secondary transition-colors hover:text-cyan focus:outline-none focus:ring-2 focus:ring-cyan"
         aria-label="GitHub Profil"
       >

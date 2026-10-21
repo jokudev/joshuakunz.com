@@ -16,6 +16,13 @@ npm ci
 npm run dev
 ```
 
+Optional Umami analytics environment variables:
+
+```bash
+PUBLIC_UMAMI_WEBSITE_ID=your-website-id
+PUBLIC_UMAMI_SCRIPT_URL=https://cloud.umami.is/script.js
+```
+
 Build production output:
 
 ```bash
@@ -61,4 +68,3 @@ Enable GitHub Pages from Actions:
 ├── tailwind.config.mjs
 └── package.json
 ```
-
